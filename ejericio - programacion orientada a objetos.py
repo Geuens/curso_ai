@@ -1,3 +1,6 @@
+from abc import ABC, abstractmethod
+
+
 class ContenidoMultimedia:
     def __init__(self, titulo, duracion, director):
         self.titulo = titulo
@@ -25,6 +28,10 @@ class ContenidoMultimedia:
             print(f'Se ha puntuado la película "{self.titulo}" con un {nota}')
         else:
             print('La puntuación debe estar entre 0 y 10')
+    
+    @abstractmethod
+    def informar_tipo_contenido(self):
+        pass
 
 
 class Documental(ContenidoMultimedia):
@@ -35,6 +42,9 @@ class Documental(ContenidoMultimedia):
     def mostrar_informacion(self):
         super().mostrar_informacion()
         print(f'Tema Principal: {self.tema_principal}')
+    
+    def informar_tipo_contenido(self):
+        return "Este contenido multimadia es un documental."
 
 
 class Pelicula(ContenidoMultimedia):
@@ -45,6 +55,9 @@ class Pelicula(ContenidoMultimedia):
     def mostrar_informacion(self):
         super().mostrar_informacion()
         print(f'Género: {self.genero}')
+    
+    def informar_tipo_contenido(self):
+        return "Este contenido multimadia es una pelicula."
 
 
 class SerieTV(ContenidoMultimedia):
@@ -57,6 +70,9 @@ class SerieTV(ContenidoMultimedia):
         super().mostrar_informacion()
         print(f'Número de Temporadas: {self.num_temporadas}')
         print(f'Número de episodios: {self.num_episodios}')
+    
+    def informar_tipo_contenido(self):
+        return "Este contenido multimadia es una serie de TV"
 
 
 class Animacion(ContenidoMultimedia):
@@ -67,6 +83,9 @@ class Animacion(ContenidoMultimedia):
     def mostrar_informacion(self):
         super().mostrar_informacion()
         print(f'Estudio de Animación: {self.estudio_animacion}')
+    
+    def informar_tipo_contenido(self):
+        return"Este contenido multimadia es una pelicula de Animacion."
 
 
 # Ejemplo de uso
@@ -77,6 +96,7 @@ documental.pausar()
 documental.reiniciar()
 documental.puntuar(7.4)
 print(documental.nota)
+print(documental.informar_tipo_contenido())
 
 print("\n")
 
