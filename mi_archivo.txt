@@ -1,0 +1,3 @@
+Nueva linea de texto
+otra línea en modo anexar
+añadir otra línea en modo 'a'
