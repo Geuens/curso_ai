@@ -291,7 +291,7 @@ def modificar_pelicula(lista_peliculas):
     limpiar_consola()
     nombre = input("\nIngrese el título del contenido a modificar: ")
 
-    contenido = next((p for p in lista_peliculas if c.titulo.strip().lower() == nombre.strip().lower()), None)
+    contenido = next((p for p in lista_peliculas if p.titulo.strip().lower() == nombre.strip().lower()), None)
 
     if contenido is None:
         print("El contenido no está en la lista")
