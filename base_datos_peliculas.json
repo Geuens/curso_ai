@@ -1,0 +1,30 @@
+{
+  "peliculas": [
+    {
+      "titulo": "a",
+      "duracion": "a",
+      "director": "a",
+      "fecha": "a",
+      "genero": "a",
+      "tema_principal": null,
+      "num_temporadas": null,
+      "num_episodios": null,
+      "estudio_animacion": null,
+      "nota": null,
+      "tipo_contenido": "pelicula."
+    },
+    {
+      "titulo": "b",
+      "duracion": "w",
+      "director": "w",
+      "fecha": "w",
+      "genero": null,
+      "tema_principal": "w",
+      "num_temporadas": null,
+      "num_episodios": null,
+      "estudio_animacion": null,
+      "nota": null,
+      "tipo_contenido": "documental."
+    }
+  ]
+}
