@@ -10,7 +10,7 @@
       "num_temporadas": null,
       "num_episodios": null,
       "estudio_animacion": null,
-      "nota": null,
+      "nota": 7.0,
       "tipo_contenido": "pelicula."
     },
     {
@@ -19,12 +19,25 @@
       "director": "w",
       "fecha": "w",
       "genero": null,
-      "tema_principal": "w",
+      "tema_principal": null,
       "num_temporadas": null,
       "num_episodios": null,
       "estudio_animacion": null,
       "nota": null,
-      "tipo_contenido": "documental."
+      "tipo_contenido": "pelicula."
+    },
+    {
+      "titulo": "c",
+      "duracion": "e",
+      "director": "e",
+      "fecha": "e",
+      "genero": "e",
+      "tema_principal": null,
+      "num_temporadas": null,
+      "num_episodios": null,
+      "estudio_animacion": null,
+      "nota": null,
+      "tipo_contenido": "pelicula."
     }
   ]
 }

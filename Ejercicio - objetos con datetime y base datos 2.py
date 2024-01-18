@@ -160,7 +160,8 @@ def mostrar_menu():
     print("4. Buscar Contenido")
     print("5. Modificar metadatos")
     print("6. Reproducir contenido")
-    print("7. Salir")
+    print ("7. Puntuar contenido")
+    print("8. Salir")
 
 def añadir_pelicula(lista_peliculas):
     limpiar_consola()
@@ -266,6 +267,23 @@ def reproducir_pelicula(lista_peliculas):
             print("La película no está en la lista")
         else:
             pelicula.reproducir()
+
+def puntuar_pelicula(lista_peliculas):
+    limpiar_consola()
+    nombre = input("\nIngrese la película a puntuar: ")
+
+    if nombre not in [pelicula.titulo for pelicula in lista_peliculas]:
+        print("La película no está en la lista")
+    else:
+        
+        pelicula = next((p for p in lista_peliculas if p.titulo.strip().lower() == nombre.strip().lower()), None)
+
+        if pelicula is None:
+            print("La película no está en la lista")
+        else:
+            nota = float(input("\nIngrese la nota de la pelicula: "))
+            pelicula.puntuar(nota)
+            guardar_base_datos(lista_peliculas)
         
         
 
@@ -273,14 +291,14 @@ def modificar_pelicula(lista_peliculas):
     limpiar_consola()
     nombre = input("\nIngrese el título del contenido a modificar: ")
 
-    contenido = next((c for c in lista_peliculas if c.titulo.strip().lower() == nombre.strip().lower()), None)
+    contenido = next((p for p in lista_peliculas if c.titulo.strip().lower() == nombre.strip().lower()), None)
 
     if contenido is None:
         print("El contenido no está en la lista")
         return
 
     else:
-        lista_peliculas = [c for c in lista_peliculas if c.titulo.strip().lower() != nombre.strip().lower()]
+        lista_peliculas = [p for p in lista_peliculas if p.titulo.strip().lower() != nombre.strip().lower()]
 
         print("\nElija el tipo de contenido a modificar:")
         print("1. Película")
@@ -351,6 +369,8 @@ if __name__ == "__main__":
         elif opcion == '6':
             reproducir_pelicula(lista_peliculas)
         elif opcion == '7':
+            puntuar_pelicula(lista_peliculas)
+        elif opcion == '8':
             print("Saliendo del programa.")
             break
         else:
