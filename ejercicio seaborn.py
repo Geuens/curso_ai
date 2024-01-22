@@ -26,9 +26,6 @@ sns.boxplot(x="sex", y="total_bill", data=tips)
 plt.title("Box Plot - Distribution of Total Bill by Gender")
 plt.show()
 
-sns.boxplot(x="sex", y="tip", data=tips)
-plt.title("Box Plot - Distribution of Tip by Gender")
-plt.show()
 
 sns.jointplot(x="total_bill", y="tip", data=tips, kind="hex", cmap="viridis")
 plt.suptitle("Hexbin Plot - Total Bill vs Tip with Color Gradients")
