@@ -1,4 +1,5 @@
-import torchfrom diffusers import DiffusionPipeline, AutoencoderKL
+import torch 
+from diffusers import DiffusionPipeline, AutoencoderKL
 
 vae = AutoencoderKL.from_pretrained("madebyollin/sdxl-vae-fp16-fix", torch_dtype=torch.float16)
 pipe = DiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-xl-base-1.0", vae=vae, torch_dtype=torch.float16, variant="fp16", use_safetensors=True)
