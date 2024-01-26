@@ -1,4 +1,8 @@
 import os
+import numpy as np
+from keras.models import load_model
+from keras.models import Sequential
+from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Image, train_test_split
 from kaggle.api.kaggle_api_extended import KaggleApi
 import zipfile
 # Configurar la API de Kaggle
@@ -82,6 +86,4 @@ modelo = Sequential([
     Dense(1, activation='sigmoid')])
 
 # Compilación del modelo
-modelo.compile(optimizer=
-'adam', loss=
-'binary_crossentropy', metrics=['accuracy'])
+modelo.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
